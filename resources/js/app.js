@@ -5,7 +5,7 @@ import router from './router'
 import './bootstrap';
 
 import Login from '@/login/login.vue';
-import Home from '@/pages/Home.vue';
+import Home from '@/layouts/Home.vue';
 
 const app = createApp({});
 app.component('login-component', Login);
