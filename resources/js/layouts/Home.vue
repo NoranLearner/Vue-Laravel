@@ -4,7 +4,7 @@
 
         <!-- Sidebar -->
 
-        <Sidebar />
+        <Sidebar :toggled="toggled" />
 
         <!-- End of Sidebar -->
 
@@ -16,7 +16,7 @@
 
                 <!-- Topbar -->
 
-                <Topbar />
+                <Topbar @emitToggled="toggled=$event"/>
 
                 <!-- End of Topbar -->
 
@@ -53,17 +53,6 @@ import Sidebar from '@/layouts/SidebarComponent.vue';
 import Topbar from '@/layouts/TopbarComponent.vue';
 import Footer from '@/layouts/FooterComponent.vue';
 
-const toggled = ref('')
-
-const sidebarToggleTop = () => {
-
-    if (toggled.value === '') {
-        toggled.value = 'toggled'
-    }
-    else {
-        toggled.value = ''
-    }
-
-}
+const toggled = ref('');
 
 </script>

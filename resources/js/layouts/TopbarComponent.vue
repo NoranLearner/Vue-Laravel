@@ -148,3 +148,26 @@
     </nav>
 
 </template>
+
+<script setup>
+
+import { ref } from 'vue';
+
+const toggled = ref('');
+
+const emit = defineEmits(["emitToggled"]);
+
+const sidebarToggleTop = () => {
+
+    if (toggled.value === '') {
+        toggled.value = 'toggled';
+        emit('emitToggled', toggled.value);
+    }
+    else {
+        toggled.value = '';
+        emit('emitToggled', toggled.value);
+    }
+
+}
+
+</script>
