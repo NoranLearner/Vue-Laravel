@@ -4,7 +4,7 @@
 
         <!-- Sidebar -->
 
-        <Sidebar :toggled="toggled" />
+        <Sidebar :toggled="toggled" v-if="token"/>
 
         <!-- End of Sidebar -->
 
@@ -16,7 +16,7 @@
 
                 <!-- Topbar -->
 
-                <Topbar @emitToggled="toggled=$event"/>
+                <Topbar @emitToggled="toggled=$event" v-if="token"/>
 
                 <!-- End of Topbar -->
 
@@ -33,7 +33,7 @@
 
             <!-- Footer -->
 
-            <Footer />
+            <Footer v-if="token"/>
 
             <!-- End of Footer -->
 
@@ -54,5 +54,7 @@ import Topbar from '@/layouts/TopbarComponent.vue';
 import Footer from '@/layouts/FooterComponent.vue';
 
 const toggled = ref('');
+
+const token = localStorage.getItem('token');
 
 </script>

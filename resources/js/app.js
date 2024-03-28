@@ -3,6 +3,7 @@ import { createApp } from 'vue';
 import router from './router'
 
 import './bootstrap';
+import './plugins/axios.js';
 
 import Login from '@/login/login.vue';
 import Home from '@/layouts/Home.vue';
